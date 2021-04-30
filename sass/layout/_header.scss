@@ -1,0 +1,37 @@
+.header {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 100;
+    width: 100%;
+    padding: 2.5rem 0rem;
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & .logo {
+        & a {
+            @include transition;
+        }
+    }
+
+    & .menu {
+        height: 2.5rem;
+        width: 5rem;
+        cursor: pointer;
+        @include transition;
+
+        &__line {
+            height: .5rem;
+            width: 100%;
+            background-color: $white;
+            @include transition;
+
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.footer {
+    background-color: $white;
+    padding: 4rem 0;
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    //goes to typography
+    &__item {
+        width: 100%;
+        text-align: center;
+
+        &--1 {
+            padding-bottom: 4rem;
+
+            & .email {
+                margin-top: 3rem;
+                color: $orange;
+                font-size: 2.6rem;
+                font-weight: 700;
+            }
+        }
+
+        &--2 {
+            padding: 3rem 0rem;
+            border-top: .2rem solid $light-grey;
+            border-bottom: .2rem solid $light-grey;
+
+            & ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & a {
+                    color: $orange;
+                    text-transform: uppercase;
+                    font-size: 2.6rem;
+                    font-weight: 700;
+                    @include transition;
+
+                    &:hover {
+                        color: $dark-text;
+                    }
+                }
+            }
+        }
+
+        &--3 {
+            padding-top: 4rem;
+        }
+
+    }
+}

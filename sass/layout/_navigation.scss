@@ -1,0 +1,72 @@
+.nav {
+    position: fixed !important;
+    @include full-width;
+    z-index: 6;
+    background-color: $white;
+    opacity: 0;
+    visibility: hidden;
+    @include transition;
+
+    &--open {
+        opacity: 1;
+        visibility: visible;
+        @include transition;
+    }
+
+    & .wrapper {
+        // height: 100%;
+        // justify-content: flex-start;
+        // align-items: flex-start;
+        flex-direction: column;
+    }
+
+    & ul {
+        // background-color: orange;
+        height: 100%;
+    }
+
+    &__top {
+        padding-top: 12rem;
+        margin-bottom: 4rem;
+
+        & li {
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        & a {
+            color: $dark-text;
+            font-size: 3.6rem;
+            font-weight: 500;
+        }
+    }
+
+    &__bottom {
+        padding-bottom: 12rem;
+
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 4rem;
+            }
+
+            & h6 {
+                color: $dark-grey;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+            }
+
+            & li:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+
+            & a {
+                color: $dark-text;
+                font-size: 1.6rem;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

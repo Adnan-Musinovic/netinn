@@ -1,0 +1,369 @@
+//hero
+.hero {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    &::after {
+        content: "";
+        @include full-width;
+        z-index: 2;
+        background-color: rgba($dark-text, .85)
+    }
+
+    & video {
+        @include full-width;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    & .wrapper {
+        position: relative;
+        z-index: 3;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-bottom: 25%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            height: 80%;
+            width: .3rem;
+            background-color: $orange;
+        }
+    }
+}
+
+//what we do
+.what-we-do {
+    padding: 8rem 0 6rem 0;
+    position: relative;
+
+    &::before {
+        @include section-line;
+    }
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+//featured work
+.featured-work {
+    padding-bottom: 6rem;
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+//home services
+.home-services {
+    background-color: $dark-text;
+    padding-top: 8rem;
+    position: relative;
+
+    &::before {
+        @include section-line;
+    }
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    & .services-list {
+        margin: 3rem 0 2rem 0;
+
+        & li {
+            padding: 1.5rem 0;
+            border-top: .2rem solid $grey-text;
+            transition: all .5s ease;
+
+            &:hover {
+                padding: 1.5rem 2rem;
+            }
+
+            &:last-child {
+                border-bottom: .2rem solid $grey-text;
+            }
+
+            & a {
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & .img-container {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -10rem;
+                        transform: translateY(-50%);
+                        width: 10rem;
+                        height: .2rem;
+                        background-color: $orange;
+                    }
+                }
+
+                & img {
+                    height: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+//our heroes
+.our-heroes {
+    padding-top: 8rem;
+    background-color: $dark-text;
+
+    & img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        margin-top: -3rem;
+    }
+}
+
+//our-folk
+.our-folk {
+    background-color: $orange;
+    padding: 4rem 0;
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+//met us
+.met-us {
+    padding: 8rem 0 4rem 0;
+    position: relative;
+    background-color: $light-grey;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 4rem;
+        width: .2rem;
+        background-color: $orange;
+    }
+}
+
+//testimonials
+.testimonials {
+    &__top {
+        //height: 16.5rem; large screen
+        background-color: $light-grey;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding-bottom: 1.5rem;
+        position: relative;
+        overflow: hidden;
+        opacity: 0.5;
+        transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+        //height: 16.5rem; large screen
+
+        &.active {
+            opacity: 1;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0%;
+                left: 50%;
+                height: .5rem;
+                width: 50%;
+                background-color: $orange;
+                transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0%;
+                right: 50%;
+                height: .5rem;
+                width: 50%;
+                background-color: $orange;
+                transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            height: .5rem;
+            width: 0%;
+            background-color: $orange;
+            transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0%;
+            right: 50%;
+            height: .5rem;
+            width: 0%;
+            background-color: $orange;
+            transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+        }
+
+        &:hover {
+            opacity: 1;
+
+            &::before,
+            &::after {
+                width: 50%;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: 2.5rem;
+        }
+
+        & img {
+            //height: auto; large screen
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__bottom {
+        padding: 6rem 0;
+
+        & .wrapper {
+            position: relative;
+            height: 35rem;
+        }
+
+        & .testimonial {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+            width: 100%;
+
+            &--active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            & blockquote {
+                position: relative;
+                height: 100%;
+                margin: 0 auto 5rem auto;
+                width: 80%;
+
+                .open-quote,
+                .close-quote {
+                    height: 3.6rem;
+                    width: 3.6rem;
+                    position: absolute;
+                    z-index: 1;
+
+                    & img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .open-quote {
+                    top: 1rem;
+                    left: 2.5rem;
+                }
+
+                .close-quote {
+                    right: 2.5rem;
+                    bottom: 1rem;
+                }
+
+                & p {
+                    display: inline-block;
+                    position: relative;
+                    z-index: 2;
+                    font-size: 2.2rem;
+                    line-height: 160%;
+                }
+            }
+        }
+
+        & p span {
+            font-weight: 700;
+        }
+    }
+}
+
+.start-a-project {
+    background-color: $light-grey;
+    padding: 4rem 0;
+
+    & a {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include transition;
+
+        &:hover {
+            padding: 0 2rem;
+        }
+
+        & .img-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -10rem;
+                transform: translateY(-50%);
+                width: 10rem;
+                height: .2rem;
+                background-color: $orange;
+            }
+
+            & img {
+                height: 1.6rem;
+            }
+        }
+    }
+}

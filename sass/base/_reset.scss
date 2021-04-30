@@ -10,6 +10,10 @@ body {
     width: 100%;
 }
 
+body {
+    background-color: $white;
+}
+
 .wrapper {
     display: flex;
     width: 90%;
@@ -18,4 +22,8 @@ body {
 
 img {
     vertical-align: bottom;
+}
+
+ul {
+    list-style: none;
 }

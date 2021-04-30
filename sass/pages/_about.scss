@@ -1,0 +1,127 @@
+.about {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    & .wrapper {
+
+        position: relative;
+        z-index: 3;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-bottom: 25%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            height: 80%;
+            width: .3rem;
+            background-color: $orange;
+        }
+    }
+}
+
+.crew {
+    position: relative;
+
+    &__img {
+        height: 20rem;
+        width: 100%;
+
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        position: relative;
+        padding: 8rem 0 6rem 0;
+
+        &::before {
+            @include section-line;
+        }
+
+        & .wrapper {
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+}
+
+.our-crew {
+    background-color: $white;
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.our-studio {
+    padding: 6rem 0;
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.stuff-to-note {
+    background-color: $dark-text;
+    padding: 8rem 0;
+    position: relative;
+
+    & h2 {
+        margin: 3rem 0 2rem 4rem;
+        text-transform: capitalize;
+    }
+
+    &::before {
+        @include section-line;
+    }
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    &__bottom {
+        margin-top: 2.6rem;
+    }
+}
+
+.brands {
+    background-color: $white;
+    padding: 8rem 0 6rem 0;
+    position: relative;
+
+    &::before {
+        @include section-line;
+    }
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    & h2 {
+        text-transform: capitalize;
+    }
+
+    & p {
+        font-weight: 500;
+        line-height: 1.6;
+    }
+}
