@@ -1,0 +1,123 @@
+.projects {
+    background-color: $dark-text;
+    height: auto;
+    width: 100%;
+
+    & .wrapper {
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 12rem 0;
+        position: relative;
+    }
+
+    & h2 {
+        font-size: 8.5rem;
+        font-weight: 700;
+        color: rgba(0,0,0,0.1);
+        text-transform: uppercase;
+    }
+
+    & button {
+        border: 0;
+        cursor: pointer;
+        outline-width: 0;
+        margin: 4rem 0;
+        background-color: transparent;
+        color: $orange;
+
+        & span {
+            color: $white;
+        }
+    }
+
+    &__modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 4rem 6rem 8rem 6rem;
+        background-color: $white;
+        display: flex;
+        text-align: center;
+        z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        transition: $fast-transition;
+    }
+
+    &__testimonial {
+        padding: 4rem 0;
+
+        & p {
+            font-size: 2.2rem;
+            font-weight: 300;
+            line-height: 3.5rem;
+            text-align: center;
+        }
+    }
+
+    &__work {
+        background-color: $dark-text;
+    }
+
+    &-full-list {
+        padding: 6rem 0;
+        background-color: $dark-text;
+
+        & .wrapper {
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        & ul {
+            width: 100%;
+        }
+
+        & li {
+            padding: 2rem 0;
+            border-top: .2rem solid rgba(255,255,255,0.1);
+            transition: $fast-transition;
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                & a {
+                    color: $dark-grey;
+                }
+            }
+        }
+
+        & a {
+            transition: $fast-transition;
+
+            &.link-list__item--main {
+                color: $white;
+                font-weight: 700;
+                font-size: 1.6rem;
+                line-height: 1.6rem;
+                transition: $fast-transition;
+            }
+
+            &.link-list__item--secondary {
+                color: $orange;
+                font-weight: 700;
+                font-size: 1.2rem;
+                line-height: 1.2rem;
+                letter-spacing: .2rem;
+                text-transform: uppercase;
+                margin-top: 1.2rem;
+                transition: $fast-transition;
+            }
+
+            &:hover {
+                &.link-list__item--main,
+                &.link-list__item--secondary {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

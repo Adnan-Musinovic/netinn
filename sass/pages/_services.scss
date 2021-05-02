@@ -1,0 +1,77 @@
+/* services */
+.services__intro {
+    height: 55%;
+    width: 100%;
+    padding-top: 20rem;
+
+    & .wrapper {
+        position: relative;
+        height: 100%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            height: 80%;
+            width: .3rem;
+            background-color: $orange;
+        }
+    }
+}
+
+/* Services BG*/
+.services__bg {
+    height: 25rem;
+    width: 100%; 
+
+    & img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+ /* Make a difference */
+.make-a-difference {
+    background-color: $white;
+    position: relative;
+    padding: 8rem 0 6rem 0rem;
+
+    &::before {
+        @include section-line;
+    }
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Services */
+.services {
+    background-color: $white;
+    padding-bottom: 6rem;
+
+    & .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Our Approach */
+.approach {
+    padding: 8rem 0 9rem 0;
+    position: relative;
+    background-color: $dark-text;
+
+    &::after {
+        @include section-line;
+    }
+
+    & .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

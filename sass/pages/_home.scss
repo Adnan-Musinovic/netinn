@@ -338,7 +338,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @include transition;
+        transition: $fast-transition;
 
         &:hover {
             padding: 0 2rem;

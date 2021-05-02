@@ -18,7 +18,10 @@
     background-color: $orange;
 }
 
-//Transition
-@mixin transition {
-    transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+//Background image
+@mixin bg-image {
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

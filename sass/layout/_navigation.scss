@@ -5,12 +5,12 @@
     background-color: $white;
     opacity: 0;
     visibility: hidden;
-    @include transition;
+    transition: $fast-transition;
 
     &--open {
         opacity: 1;
         visibility: visible;
-        @include transition;
+        transition: $fast-transition;
     }
 
     & .wrapper {

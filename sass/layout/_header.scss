@@ -13,7 +13,7 @@
 
     & .logo {
         & a {
-            @include transition;
+           transition: $fast-transition;
         }
     }
 
@@ -21,13 +21,13 @@
         height: 2.5rem;
         width: 5rem;
         cursor: pointer;
-        @include transition;
+       transition: $fast-transition;
 
         &__line {
             height: .5rem;
             width: 100%;
             background-color: $white;
-            @include transition;
+           transition: $fast-transition;
 
             &:not(:last-child) {
                 margin-bottom: 1.5rem;
