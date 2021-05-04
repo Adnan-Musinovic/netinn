@@ -1,3 +1,13 @@
+// Loader
+const loader = document.querySelector('.loader');
+window.addEventListener('load', ()=> {
+    loader.style.transform = 'translateY(-100%)';
+    loader.style.opacity = '0';
+    loader.style.visibility = 'hidden';
+})
+
+
+
 // Open nav
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.nav');

@@ -2,18 +2,29 @@
 $white: #fff;
 $dark-text: #191a1d;
 $light-text: #232427;
-$grey-text: #7e7f80;
+$grey-text: #7E7F80;
 $light-grey: #f4f4f4;
 $dark-grey: #aaaaab;
 $orange: #c38d73;
 
+/* Media Queries */
+$device-small: 671px;
+
 //Paddings
 .mp-24 {
     padding: 2rem 0 0 4rem;
+
+    @media only screen and (min-width: $device-small) {
+        padding: 0 0 0 0;
+    }
 }
 
 .mp-34 {
     padding: 3rem 0 0 4rem;
+
+    @media only screen and (min-width: $device-small) {
+        padding: 0 0 0 0;
+    }
 }
 
 /* Transitions */

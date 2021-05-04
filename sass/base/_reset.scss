@@ -17,7 +17,9 @@ body {
 .wrapper {
     display: flex;
     width: 90%;
+    max-width: 144rem;
     margin: 0 auto;
+    position: relative;
 }
 
 img {

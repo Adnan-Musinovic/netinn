@@ -12,6 +12,10 @@
         text-transform: capitalize;
         padding-top: 2rem;
 
+        @media only screen and (min-width: $device-small) {
+            height: 46rem;
+        }
+
         &--dark {
             background-color: $dark-text;
             
@@ -137,7 +141,8 @@
 
 /* Stuff to note */
 .stuff-to-note,
-.approach {
+.approach,
+.benefits {
 
     & .grid {
         grid-template-columns: 1fr;
@@ -254,6 +259,11 @@
 
 .new-legend {
     background-image: url(../../images/New-Legend-Featured-1.jpg);
+    @include bg-image;
+}
+
+.paddle-wake {
+    background-image: url(../../images/paddle-wake.jpg);
     @include bg-image;
 }
 

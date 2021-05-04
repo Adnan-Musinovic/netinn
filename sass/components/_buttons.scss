@@ -9,6 +9,7 @@
     z-index: 1;
     overflow: hidden;
     transition: all .5s ease;
+    border-bottom: .2rem solid $orange;
 
     &::before {
         content: '';
@@ -45,5 +46,11 @@
         &::after {
             top: 0%;
         }
+    }
+
+    &--full-width {
+        @extend .cta;
+        width: 100%;
+        margin: 3rem 0;
     }
 }

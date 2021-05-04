@@ -12,10 +12,14 @@
     content: '';
     position: absolute;
     top: 0%;
-    left: 5%;
+    left: 0%;
     height: 4rem;
     width: .3rem;
     background-color: $orange;
+
+    @media only screen and (min-width: $device-small) {
+        height: 6rem;
+    }
 }
 
 //Background image

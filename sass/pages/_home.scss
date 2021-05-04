@@ -1,3 +1,42 @@
+/* Loader */
+.loader {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    transition: $fast-transition;
+
+    &__inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--text {
+        color: $light-grey;
+        font-size: 12rem;
+        font-weight: 900;
+        line-height: 1;
+        transition: $fast-transition;
+        text-align: justify;
+        letter-spacing: 1rem;
+        animation: loader-text 3s ease-in-out infinite;
+    }
+}
+
+@keyframes loader-text {
+    0% {color: $light-grey;}
+    50% {color: $grey-text;}
+    100% {color: $light-grey;}
+}
+
 //hero
 .hero {
     height: 100%;
@@ -26,6 +65,11 @@
         align-items: flex-start;
         flex-direction: column;
         padding-bottom: 25%;
+        
+        @media only screen and (min-width: $device-small) {
+            justify-content: space-between;
+            flex-direction: row;
+        }
 
         &::after {
             content: '';
@@ -41,17 +85,43 @@
 
 //what we do
 .what-we-do {
-    padding: 8rem 0 6rem 0;
+    // padding: 8rem 0 6rem 0;
     position: relative;
 
-    &::before {
-        @include section-line;
-    }
+    // @media only screen and (min-width: $device-small) {
+    //     padding: 10rem 0 10rem 0;
+    // }
 
     & .wrapper {
         justify-content: space-between;
         align-items: flex-start;
         flex-direction: column;
+        padding: 8rem 0 6rem 0;
+
+        &::before {
+            @include section-line;
+        }
+
+        @media only screen and (min-width: $device-small) {
+            justify-content: space-between;
+            flex-direction: row;
+
+            @media only screen and (min-width: $device-small) {
+                padding: 10rem 0 10rem 0;
+            }
+        }
+    }
+
+    & h3 {
+        @media only screen and (min-width: $device-small) {
+            width: 30%;
+        }
+    }
+
+    & p {
+        @media only screen and (min-width: $device-small) {
+            width: 70%;
+        }
     }
 }
 
@@ -69,17 +139,31 @@
 //home services
 .home-services {
     background-color: $dark-text;
-    padding-top: 8rem;
+    // padding-top: 8rem;
     position: relative;
 
-    &::before {
-        @include section-line;
-    }
+    // @media only screen and (min-width: $device-small) {
+    //     padding: 12rem 0 10rem 0;
+    // }
 
     & .wrapper {
         justify-content: space-between;
         align-items: flex-start;
         flex-direction: column;
+        padding-top: 8rem;
+
+        &::before {
+            @include section-line;
+        }
+
+        @media only screen and (min-width: $device-small) {
+            justify-content: space-between;
+            flex-direction: row;
+
+            @media only screen and (min-width: $device-small) {
+                padding: 12rem 0 10rem 0;
+            }
+        }
     }
 
     & .services-list {
@@ -128,6 +212,19 @@
             }
         }
     }
+
+    & h3 {
+        @media only screen and (min-width: $device-small) {
+            width: 30%;
+        }
+    }
+
+    &__content {
+        @media only screen and (min-width: $device-small) {
+            width: 70%;
+        }
+    }
+
 }
 
 //our heroes
@@ -148,10 +245,30 @@
     background-color: $orange;
     padding: 4rem 0;
 
+    @media only screen and (min-width: $device-small) {
+        padding: 8rem 0;
+    }
+
     & .wrapper {
         justify-content: space-between;
         align-items: flex-start;
         flex-direction: column;
+
+        @media only screen and (min-width: $device-small) {
+            flex-direction: row;
+        }
+    }
+
+    & h3 {
+        @media only screen and (min-width: $device-small) {
+            width: 30%;
+        }   
+    }
+
+    & p {
+        @media only screen and (min-width: $device-small) {
+            width: 70%;
+        } 
     }
 }
 
@@ -175,93 +292,76 @@
 
 //testimonials
 .testimonials {
+
     &__top {
-        //height: 16.5rem; large screen
+        width: 100%;
         background-color: $light-grey;
-    }
 
-    &__item {
-        cursor: pointer;
-        padding-bottom: 1.5rem;
-        position: relative;
-        overflow: hidden;
-        opacity: 0.5;
-        transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-        //height: 16.5rem; large screen
+        & .wrapper {
+            justify-content: center;
+        }
 
-        &.active {
-            opacity: 1;
-            position: relative;
-            overflow: hidden;
-
+        &__item,
+        &__item .slick-slide {
+            height: 12rem !important;
+            padding: 2rem !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            position: relative !important;
+            
+            &::after,
             &::before {
                 content: '';
                 position: absolute;
                 bottom: 0%;
+                height: .5rem;
+                width: 0%;
+                background-color: $orange;
+                transition: $fast-transition;
+            }
+
+            &::after {
                 left: 50%;
-                height: .5rem;
-                width: 50%;
-                background-color: $orange;
-                transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
             }
 
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 0%;
+            &::before {
                 right: 50%;
-                height: .5rem;
-                width: 50%;
-                background-color: $orange;
-                transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
             }
-        }
 
-        &::before {
-            content: '';
-            position: absolute;
-            bottom: 0%;
-            left: 50%;
-            height: .5rem;
-            width: 0%;
-            background-color: $orange;
-            transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-        }
+            &:hover {
+                &::after,
+                &::before {
+                    width: 50%;
+                }
 
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0%;
-            right: 50%;
-            height: .5rem;
-            width: 0%;
-            background-color: $orange;
-            transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-        }
+                & img {
+                    opacity: 1;
+                }
+            } 
 
-        &:hover {
-            opacity: 1;
-
-            &::before,
-            &::after {
-                width: 50%;
+            & img {
+                height: auto;
+                width: 100%;
+                object-fit: cover;
+                opacity: 0.5;
+                transition: $fast-transition;
             }
-        }
 
-        &:not(:last-child) {
-            margin-right: 2.5rem;
-        }
-
-        & img {
-            //height: auto; large screen
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+            &.active {
+                opacity: 1;
+            }
         }
     }
 
+    
     &__bottom {
         padding: 6rem 0;
+
+        @media only screen and (min-width: $device-small) {
+            width: 60%;
+            margin: 0 auto;
+        }
 
         & .wrapper {
             position: relative;
@@ -277,6 +377,7 @@
             visibility: hidden;
             transition: all .3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
             width: 100%;
+            text-align: center;
 
             &--active {
                 opacity: 1;
