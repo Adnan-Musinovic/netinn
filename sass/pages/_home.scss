@@ -81,6 +81,19 @@
             background-color: $orange;
         }
     }
+
+    & .subtitle,
+    & .primary-title {
+        opacity: 0;
+        transform: translateY(50%);
+        transition: $slow-transition;
+        transition-delay: .5s;
+    }
+
+    & .primary-title {
+        transition-delay: .7s;
+    }
+
 }
 
 //what we do
@@ -100,6 +113,8 @@
 
         &::before {
             @include section-line;
+            height: 0% !important;
+            transition: $slow-transition;
         }
 
         @media only screen and (min-width: $device-small) {
@@ -113,15 +128,24 @@
     }
 
     & h3 {
+        opacity: 0;
+        transition: $slow-transition;
+
         @media only screen and (min-width: $device-small) {
             width: 30%;
         }
+
     }
 
     & p {
+        opacity: 0;
+        transition: $slow-transition;
+        transition-delay: .5s;
+
         @media only screen and (min-width: $device-small) {
             width: 70%;
         }
+
     }
 }
 
@@ -133,6 +157,11 @@
         justify-content: space-between;
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    & h2 {
+        opacity: 0;
+        transition: $slow-transition;
     }
 }
 
@@ -166,13 +195,23 @@
         }
     }
 
+    & h3,
+    & h2,
+    & p {
+        opacity: 0;
+        transition: all 1s ease-in-out;
+    }
+
     & .services-list {
         margin: 3rem 0 2rem 0;
-
+        
         & li {
             padding: 1.5rem 0;
             border-top: .2rem solid $grey-text;
             transition: all .5s ease;
+            opacity: 0;
+            transform: translateY(2.5rem);
+            transition: all .5s ease-in-out;
 
             &:hover {
                 padding: 1.5rem 2rem;

@@ -88,6 +88,10 @@
         margin: 6rem 0;
 
         & .grid__item {
+            opacity: 0;
+            transform: translateY(50%);
+            transition: all 1s ease-in-out;
+
             &::after {
                 content: '';
                 @include full-width;

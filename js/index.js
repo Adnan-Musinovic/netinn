@@ -1,12 +1,25 @@
 // Loader
 const loader = document.querySelector('.loader');
-window.addEventListener('load', ()=> {
+const heroSubHeading = document.querySelector('.hero .subtitle');
+const heroPrimaryHeading = document.querySelector('.hero .primary-title');
+
+window.addEventListener('DOMContentLoaded', ()=> {
+
+    // Loader Animation
+
     loader.style.transform = 'translateY(-100%)';
     loader.style.opacity = '0';
     loader.style.visibility = 'hidden';
-})
 
+    // Hero Heading Animations on Load
 
+    heroSubHeading.style.opacity = '1';
+    heroSubHeading.style.transform = 'translateY(0%)';
+
+    heroPrimaryHeading.style.opacity = '1';
+    heroPrimaryHeading.style.transform = 'translateY(0%)';
+
+});
 
 // Open nav
 const menu = document.querySelector('.menu');
@@ -52,4 +65,50 @@ menu.addEventListener('click', () => {
         document.querySelector('body').style.overflowY = 'scroll';
         nav.style.overflowY = 'hidden';
     }
-})
+});
+
+//Animations on Scroll
+window.addEventListener('scroll', () => {
+    let wScroll = this.pageYOffset;
+
+    const whatWeDoSection = document.querySelector('.what-we-do');
+    const whatWeDoHeading = document.querySelector('.what-we-do .subtitle');
+    const whatWeDoText = document.querySelector('.what-we-do p');
+    
+    const featuredWorkSection = document.querySelector('.featured-work');
+    const featuredWorkHeading = document.querySelector('.featured-work h2');
+    const featuredWorkGridItems = document.querySelectorAll('.featured-work .grid__item');
+
+    const homeServicesSection = document.querySelector('.home-services');
+    const homeServicesSubheading = document.querySelector('.home-services h3');
+    const homeServicesHeading = document.querySelector('.home-services h2');
+    const homeServicesText = document.querySelector('.home-services .text');
+    const homeServicesLinks = document.querySelectorAll('.home-services li');
+
+    if(wScroll > (whatWeDoSection.offsetTop / 2)) {
+        whatWeDoHeading.style.opacity = '1';
+        whatWeDoText.style.opacity = '1';
+    }
+
+    if(wScroll > (featuredWorkSection.offsetTop / 2)) {
+        featuredWorkHeading.style.opacity = '1';
+
+        for(let i = 0; i < featuredWorkGridItems.length; i++) {
+            featuredWorkGridItems[i].style.opacity = '1';
+            featuredWorkGridItems[i].style.transform = 'translateY(0%)';
+        }
+    }
+
+    if(wScroll > (homeServicesSection.offsetTop / 1.25)) {
+        homeServicesSubheading.style.opacity = '1';
+        homeServicesHeading.style.opacity = '1';
+        homeServicesText.style.opacity = '1';
+
+        for(let i = 0; i < homeServicesLinks.length; i++) {
+            setTimeout(() => {
+                homeServicesLinks[i].style.opacity = '1';
+                homeServicesLinks[i].style.transform = 'translateY(0%)';
+            }, i * 300);
+        }  
+    }
+});
