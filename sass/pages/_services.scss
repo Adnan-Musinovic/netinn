@@ -4,9 +4,20 @@
     width: 100%;
     padding-top: 20rem;
 
+    @media only screen and (min-width: $device-small) {
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+
     & .wrapper {
         position: relative;
         height: 100%;
+
+        @media only screen and (min-width: $device-small) {
+            justify-content: space-between;
+            height: 50%;
+        }
 
         &::after {
             content: '';
@@ -25,6 +36,10 @@
     height: 25rem;
     width: 100%; 
 
+    @media only screen and (min-width: $device-small) {
+        height: 50rem;
+    }
+
     & img {
         height: 100%;
         width: 100%;
@@ -40,6 +55,10 @@
         align-items: flex-start;
         flex-direction: column;
         padding: 8rem 0 6rem 0rem;
+
+        @media only screen and (min-width: $device-small) {
+            flex-direction: row;
+        }
 
         &::before {
             @include section-line;
@@ -70,6 +89,27 @@
 
         &::after {
             @include section-line;
+        }
+    }
+
+    & .stuff-to-note {
+        &__top {
+            @media only screen and (min-width: $device-small) {
+                flex-direction: row;
+                justify-content: space-between;
+
+                & div {
+                    width: 50%;
+
+                    & .secondary-title {
+                        margin-bottom: 3rem;
+                    }
+
+                    & p {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }

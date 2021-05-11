@@ -29,6 +29,14 @@
             background-color: $white;
            transition: $fast-transition;
 
+           &--light {
+               background-color: $white;
+           }
+
+           &--dark {
+               background-color: $dark-text;
+           }
+
             &:not(:last-child) {
                 margin-bottom: 1.5rem;
             }

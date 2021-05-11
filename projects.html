@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c38d73">
     <title>Netinn | Projects</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -13,11 +13,11 @@
     <!--HEADER-->
     <header class="header">
         <div class="wrapper">
-            <div class="logo logo--dark"><a href="index.html">netinn</a></div>
+            <div><a class="logo logo--light" href="index.html">netinn</a></div>
 
             <div class="menu">
-                <div class="menu__line menu__line--top"></div>
-                <div class="menu__line menu__line--bottom"></div>
+                <div class="menu__line menu__line--light menu__line--top"></div>
+                <div class="menu__line menu__line--light menu__line--bottom"></div>
             </div>
         </div>
     </header>
@@ -171,7 +171,7 @@
     </section>
 
     <!--footer-->
-    <footer class="footer">
+    <footer class="footer white-section">
         <div class="footer__item footer__item--1">
             <div class="wrapper">
                 <h2 class="secondary-title secondary-title--dark">out of hours</h2>
@@ -181,24 +181,25 @@
         <div class="footer__item footer__item--2">
             <div class="wrapper">
                 <ul>
-                    <li><a href="#">tw</a></li>
-                    <li><a href="#">fb</a></li>
-                    <li><a href="#">ig</a></li>
-                    <li><a href="#">in</a></li>
+                    <li><a class="footer--social" href="#">tw</a></li>
+                    <li><a class="footer--social" href="#">fb</a></li>
+                    <li><a class="footer--social" href="#">ig</a></li>
+                    <li><a class="footer--social" href="#">in</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer__item footer__item--3">
             <div class="wrapper">
-                <div class="footer__item--3__top">
+                <ul class="footer__item--3__top">
                     <p class="phone">0000 123 456 789</p>
-                    <p class="address">Unit 9, Home Farm Business Centre, <br> Romsey, SO51 0JT</p>
-                </div>
+                    <p class="address">Unit 9, Home Farm Business Centre Romsey, SO51 0JT</p>
+                </ul>
                 <a href="#" class="cta">get directions</a>
             </div>
         </div>
     </footer>
 
+    <!--navigation-->
     <!--navigation-->
     <nav class="nav">
         <div class="wrapper">
@@ -214,29 +215,108 @@
             </div>
 
             <div class="nav__bottom">
-                <ul class="nav__bottom__item nav__item--2">
+                <div class="nav__bottom--top">
                     <h6>design</h6>
-                    <li><a href="#">branding</a></li>
-                    <li><a href="#">websites</a></li>
-                </ul>
-
-                <ul class="nav__bottom__item nav__item--3">
+                    <ul class="nav__bottom__item nav__item--2">
+                        
+                        <li><a href="#">branding</a></li>
+                        <li><a href="#">websites</a></li>
+                    </ul>
+                    
                     <h6>Development</h6>
-                    <li><a href="#">WordPress</a></li>
-                    <li><a href="#">Shopify</a></li>
-                </ul>
+                    <ul class="nav__bottom__item nav__item--3">
+                        
+                        <li><a href="#">WordPress</a></li>
+                        <li><a href="#">Shopify</a></li>
+                    </ul>
+                </div>
 
-                <ul class="nav__bottom__item nav__item--3">
+                <div class="nav__bottom--bottom">
                     <h6>get started</h6>
-                    <li><a href="#">hello@netinn.com</a></li>
-                    <li><a href="#">0000 123 456 789</a></li>
-                    <li><a href="#">get directions</a></li>
-                    <li><a href="#">WordPress Guides</a></li>
-                </ul>
+                    <ul class="nav__bottom__item nav__item--3">
+                        <li><a href="#">hello@netinn.com</a></li>
+                        <li><a href="#">0000 123 456 789</a></li>
+                        <li><a href="#">get directions</a></li>
+                        <li><a href="#">WordPress Guides</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="js/index.js"></script>
+
+    <script>
+
+        if (window.matchMedia("(max-width: 670px)").matches) {
+            $('.testimonial-slider').slick({
+                infinite: false,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+            });
+        }
+
+        $(document).ready(function () {
+            $('.testimonials__top__item').click(function(e) {
+
+                $('.testimonials__top__item.active').removeClass('active');
+
+                var $parent = $(this);
+                $parent.addClass('active');
+                e.preventDefault();
+            });
+        });
+
+        $('#rlyl').click(function() {
+            $('.rlyl').fadeIn(5000);
+            $('.rlyl').css({'opacity': '1', 'visibility': 'visible'});
+            $('.fumo, .new-legend-text, .cfb, .papercast').css({'opacity': '0', 'visibility': 'hidden'});
+        });
+
+        $('#fumo').click(function() {
+            $('.fumo').fadeIn(5000);
+            $('.fumo').css({'opacity': '1', 'visibility': 'visible'});
+            $('.rlyl, .new-legend-text, .cfb, .papercast').css({'opacity': '0', 'visibility': 'hidden'});
+        });
+
+        $('#new-legend').click(function() {
+            $('.new-legend-text').fadeIn(5000);
+            $('.new-legend-text').css({'opacity': '1', 'visibility': 'visible'});
+            $('.rlyl, .fumo, .cfb, .papercast').css({'opacity': '0', 'visibility': 'hidden'});
+        });
+
+        $('#fcb').click(function() {
+            $('.cfb').fadeIn(5000);
+            $('.cfb').css({'opacity': '1', 'visibility': 'visible'});
+            $('.rlyl, .fumo, .new-legend-text, .papercast').css({'opacity': '0', 'visibility': 'hidden'});
+        });
+
+        $('#paperCast').click(function() {
+            $('.papercast').fadeIn(5000);
+            $('.papercast').css({'opacity': '1', 'visibility': 'visible'});
+            $('.rlyl, .fumo, .new-legend-text, .cfb').css({'opacity': '0', 'visibility': 'hidden'});
+        });
+
+        let elements = document.querySelectorAll('.footer ul li');
+
+        function hoverEffect(element) {
+            $(element).hover(function () { // Mouse over
+                $(this).siblings().stop().fadeTo(300, 0.6);
+                $(this).parent().siblings().stop().fadeTo(300, 0.3);
+            }, function () { // Mouse out
+                $(this).siblings().stop().fadeTo(300, 1);
+                $(this).parent().siblings().stop().fadeTo(300, 1);
+            });
+        }
+
+        hoverEffect(elements);
+        hoverEffect('.nav__top ul li a');
+        hoverEffect('.nav__item--2 li a');
+        hoverEffect('.nav__item--3 li a');
+
+    </script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0rem;
+    padding: 2rem 0;
     width: 13rem;
     margin: 0 auto;
     position: relative;
@@ -10,6 +10,11 @@
     overflow: hidden;
     transition: all .5s ease;
     border-bottom: .2rem solid $orange;
+
+    @media only screen and (min-width: $device-small) {
+        width: 28rem;
+        padding: 3rem 0;
+    }
 
     &::before {
         content: '';
@@ -52,5 +57,20 @@
         @extend .cta;
         width: 100%;
         margin: 3rem 0;
+    }
+}
+
+.cta--secondary {
+    color: $orange;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    transition: all .3s ease;
+
+    &:hover {
+        color: $white;
     }
 }

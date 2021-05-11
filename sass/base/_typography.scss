@@ -24,8 +24,15 @@ a {
     letter-spacing: .2rem;
 
     @media only screen and (min-width: $device-small) {
-        font-size: 1.4rem;
-        line-height: 2rem;
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+        width: 50%;
+    }
+
+    @media only screen and (min-width: $device-large) {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+        width: 85rem !important;
     }
 
     &--white {
@@ -43,8 +50,14 @@ a {
     line-height: 1.3;
 
     @media only screen and (min-width: $device-small) {
-        font-size: 5.2rem;
-        line-height: 7.5rem;
+        font-size: 5.8rem;
+        line-height: 8.4rem;
+    }
+
+    @media only screen and (min-width: $device-large) {
+        font-size: 7.6rem;
+        line-height: 11rem;
+        width: 55rem;
     }
 
     &--white {
@@ -65,6 +78,11 @@ a {
     @media only screen and (min-width: $device-small) {
         font-size: 2.4rem;
         line-height: 2.4rem;
+    }
+
+    @media only screen and (min-width: $device-large) {
+        font-size: 4.8rem;
+        line-height: 4.8rem;
     }
 
     &--white {
@@ -127,20 +145,42 @@ a {
     @media only screen and (min-width: $device-small) {
         font-size: 2.2rem;
         line-height: 4rem;
+        width: 50%;
+    }
+
+    @media only screen and (min-width: $device-large) {
+        font-size: 2.8rem;
+        line-height: 5rem;
     }
 
     &--white {
         color: $grey-text;
     }
+
+    &--link {
+        color: $orange;
+        transition: all .3s ease;
+
+        &:hover {
+            color: $dark-text;
+        }
+    }
 }
 
 //header
 .header {
-    & .logo a {
-        color: $white;
+    & .logo {
         font-size: 3.6rem;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 900;
+
+        &--light {
+            color: $white;
+        }
+
+        &--dark {
+            color: $dark-text;
+        }
     }
 }
 
@@ -169,14 +209,28 @@ a {
     }
 }
 
+/* What we do */
+.what-we-do {
+    & .text {
+        @media only screen and (min-width: $device-large) {
+            width: 68rem;
+        }
+    }
+}
+
 //cta 
 .cta {
-    color: $dark-text;
+    color: $light-text;
     font-size: 1rem;
     line-height: 1rem;
     text-transform: uppercase;
     font-weight: 800;
-    letter-spacing: .1rem;
+    letter-spacing: .2rem;
+
+    @media only screen and (min-width: $device-small) {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
 }
 
 //home services 
@@ -222,26 +276,113 @@ a {
             display: inline-block;
             color: $dark-text;
             font-size: 2.6rem;
-            font-weight: 500;
+            font-weight: 600;
+            line-height: 2.6rem;
+
+            @media only screen and (min-width: $device-small) {
+                font-size: 2.8rem;
+                line-height: 2.8rem;
+            }
         }
     }
 }
 
-//phone
-.phone {
-    color: $orange;
-    font-size: 2.6rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-}
+/* Footer */
+.footer {
+    & .secondary-title {
+        font-size: 1.4rem;
+        font-weight: 800;
+        line-height: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
 
-.address {
-    color: $dark-text;
-    font-size: 2.6rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
+        @media only screen and (min-width: $device-small) {
+            font-size: 1.6rem;
+            line-height: 1.8rem;
+        }
+    }
+
+    & .email {
+        color: $orange;
+        font-size: 2.2rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+
+        @media only screen and (min-width: $device-small) {
+            font-size: 2.8rem;
+            line-height: 2.8rem;
+        }
+    }
+
+    &--social {
+        color: $orange;
+        font-size: 1.7rem;
+        font-weight: 800;
+        line-height: 1.7rem;
+        text-transform: uppercase;
+        transition: $fast-transition;
+
+        @media only screen and (min-width: $device-small) {
+            font-size: 2.6rem;
+            line-height: 2.6rem;
+        }
+
+        &:hover {
+            color: $dark-text;
+        }
+    }
+
+    & .phone {
+        color: $orange;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+
+        @media only screen and (min-width: $device-small) {
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+    }
+
+    & .address {
+        color: $dark-text;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 2.5rem;
+        margin-bottom: 2rem;
+
+        @media only screen and (min-width: $device-small) {
+            font-size: 1.6rem;
+            line-height: 2.9rem;
+        }
+    }
 }
 
 .link--active {
     color: $orange !important;
+}
+
+/* Stuff to note */
+.stuff-to-note {
+    & h3 {
+
+        @media only screen and (min-width: $device-small) {
+            color: $white;
+            font-size: 2.6rem;
+            font-weight: 600;
+            line-height: 3.8rem;
+            margin-bottom: 3rem;
+        }
+
+    }
+
+    & .text {
+        @media only screen and (min-width: $device-small) {
+            color: $dark-grey;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 3.2rem;
+        }
+    }
 }

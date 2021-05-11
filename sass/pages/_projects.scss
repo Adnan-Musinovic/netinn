@@ -17,6 +17,11 @@
         font-weight: 700;
         color: rgba(0,0,0,0.1);
         text-transform: uppercase;
+
+        @media only screen and (min-width: $device-small) {
+            font-size: 12rem;
+            letter-spacing: 6rem;
+        }
     }
 
     & button {
@@ -50,11 +55,20 @@
     &__testimonial {
         padding: 4rem 0;
 
+        @media only screen and (min-width: $device-small) {
+            width: 80%;
+            margin: 0 auto;
+        }
+
         & p {
             font-size: 2.2rem;
             font-weight: 300;
             line-height: 3.5rem;
             text-align: center;
+
+            @media only screen and (min-width: $device-small) {
+                width: 100%;
+            }
         }
     }
 
@@ -70,10 +84,20 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-direction: column;
+
+            @media only screen and (min-width: $device-small) {
+                flex-direction: row;
+            }
         }
 
         & ul {
             width: 100%;
+
+            @media only screen and (min-width: $device-small) {
+                &:not(:last-child) {
+                    margin-right: 2.5rem;
+                }
+            }
         }
 
         & li {
@@ -82,6 +106,12 @@
             transition: $fast-transition;
             display: flex;
             flex-direction: column;
+
+            @media only screen and (min-width: $device-small) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
 
             &:hover {
                 & a {
@@ -110,6 +140,10 @@
                 text-transform: uppercase;
                 margin-top: 1.2rem;
                 transition: $fast-transition;
+
+                @media only screen and (min-width: $device-small) {
+                    margin-top: 0;
+                }
             }
 
             &:hover {
